@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+// 添加插件
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+    appKey "2e3b94ff73278"
+    appSecret "a3f54208395422515264860b1f89afec"
+    SMSSDK {}
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.neu.testimageload"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.jakewharton:butterknife:10.2.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
+
+    //Imageloader
+    implementation files('libs/universal-image-loader-1.9.5.jar')
+
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    implementation 'jp.wasabeef:picasso-transformations:2.1.0'
+    // If you want to use the GPU Filters
+    implementation 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+
+    //Gson封装库
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.carson_ho:SearchLayout:1.0.1'
+
+    implementation 'com.zhy:okhttputils:2.6.2'
+
+    //饺子视频播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:7.2.1'
+
+    //PDF
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+
+
+    implementation 'jp.wasabeef:glide-transformations:3.0.1'
+
+
+    implementation 'com.facebook.fresco:fresco:2.1.0'
+
+    implementation 'com.zhihu.android:matisse:0.5.3-beta3'
+
+    implementation 'com.github.huangyanbin:SmartTable:2.2.0'
+
+    //bm-x PhotoView
+    implementation 'com.bm.photoview:library:1.4.1'
+
+    //chrisbanes/PhotoView
+    implementation 'com.github.chrisbanes:PhotoView:2.0.0'
+
+    implementation 'com.github.xiaoyanger0825:NiceVieoPlayer:v2.2'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
+
+}
+
+repositories {
+    jcenter()
+
+    mavenCentral()
+    google()
+}

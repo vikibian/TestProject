@@ -1,0 +1,78 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+        <style name="Theme" parent="Theme.AppCompat.Light.NoActionBar">
+            <!-- Customize your theme here. -->
+            <item name="colorPrimary">#2e8abb</item> <!--浅蓝色-->
+            <item name="colorPrimaryDark">#3A5FCD</item> <!--深蓝色-->
+        </style>
+
+    <style name="Widget.SeekBar.Normal" parent="@android:style/Widget.SeekBar">
+        <item name="android:maxHeight">2.5dip</item>
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:indeterminateDrawable">
+            @android:drawable/progress_indeterminate_horizontal
+        </item>
+        <item name="android:progressDrawable">@drawable/seekbar</item>
+        <item name="android:minHeight">2.5dip</item>
+        <item name="android:thumb">@drawable/seekbar_thumb</item>
+        <item name="android:thumbOffset">1.0dip</item>
+
+    </style>
+
+
+
+    <style name="CustomWindowTitleBackground">
+        <item name="android:background">#778899</item>
+    </style>
+    <style name="activityTitlebar" parent="android:Theme">
+        <item name="android:windowTitleSize">32dp</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+    </style>
+
+    <style name="BaseToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <!--内容距离开始 边距-->
+        <item name="contentInsetStart">8dp</item>
+        <!--内容距离 导航按钮 边距-->
+        <item name="contentInsetStartWithNavigation">8dp</item>
+        <!--使自定义view可以贴左右的边，多数版本的系统不要下面两句也可以，但少量版本必须加下面的两句-->
+        <item name="android:paddingLeft">8dp</item>
+        <!--右内边距-->
+        <item name="android:paddingRight">0dp</item>
+        <!--最小高度-->
+        <item name="android:minHeight">?actionBarSize</item>
+        <!--高度-->
+        <item name="android:layout_height">?actionBarSize</item>
+        <!--id-->
+        <item name="android:id">@id/toolbar</item>
+        <!--宽度-->
+        <item name="android:layout_width">match_parent</item>
+        <item name="actionMenuTextColor">#000</item>
+    </style>
+
+    <!--标题栏返回按钮样式-->
+    <style name="ToolbarNavigationButtonStyle" parent="Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">16dp</item>
+    </style>
+
+
+    <style name="AppTheme.ToolbarHeight">
+        <!--修改了标题栏默认样式的样式
+        修改了返回按钮的边距
+        -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarNavigationButtonStyle">@style/ToolbarNavigationButtonStyle</item>
+        <!--NavigationIcon的宽度-->
+        <item name="toolbarStyle">@style/BaseToolbarStyle</item>
+    </style>
+</resources>

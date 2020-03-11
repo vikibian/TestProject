@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.neu.testimageload">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".surfaceview.MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".pdfView.PDFViewerActivity"></activity>
+        <activity
+            android:name=".jiaoziplayer.JiaoziPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
+        <activity android:name=".TestActivity" />
+        <activity android:name=".sms.SmsActivity" />
+        <activity
+            android:name=".nicevideo.NiceVideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity android:name=".glidenetimage.GlideNetImageActivity" />
+        <activity android:name=".SmartTable.SmartTableActivity" />
+        <activity android:name=".SearchView.SearchDemoActivity" />
+        <activity android:name=".SearchView.SearchViewActivity" />
+        <activity android:name=".VideoRecordDemo.PlayVideoActivity" />
+        <activity
+            android:name=".VideoRecordDemo.VideoRecordDemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".surfaceview.SurfaceViewActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".toolbar.ToolbarActivity"
+            android:theme="@style/Theme" />
+        <activity android:name=".photoandvideo.PhotoCameraActivity" />
+        <activity android:name=".photoandvideo.PhotoMainActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.neu.testimageload.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public" />
+        </provider>
+
+        <activity android:name=".photoandvideo.PhotoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".fresco.activity.FrescoCropActivity" />
+        <activity android:name=".fresco.activity.FrescoSpimgActivity" />
+        <activity android:name=".fresco.FrescoActivity" />
+        <activity android:name=".glide.Activity.GlideTranformationsActivity" />
+        <activity android:name=".glide.Activity.GlideRecyclerviewActivity" />
+        <activity android:name=".glide.Activity.GlideBaseActivity" />
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".picasso.activity.PicassoTransfromationsActivity" />
+        <activity android:name=".picasso.activity.PicassoListviewActivity" />
+        <activity android:name=".picasso.activity.PicassoActivity" />
+        <activity android:name=".ImageLoaderActivity" />
+        <activity android:name=".ImageloaderViewpagerActivity" />
+        <activity android:name=".ImageloaderGridviewActivity" />
+        <activity android:name=".ImageloaderListviewActivity" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

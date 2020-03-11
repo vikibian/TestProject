@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".photoandvideo.PhotoActivity">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pick photos"
+                android:background="#4169E1"
+                android:textColor="#ffffff"
+                />
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/button_surfview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义拍照"
+                android:background="#4169E1"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_video"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义录像"
+                android:background="#4169E1"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_searchview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自定义录像"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_smarttable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="sMARTtABLE"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_glideImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="glideImage"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_nicevideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="nicevideo"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="toolbar"
+                android:textColor="#ffffff"
+                />
+
+            <Button
+                android:id="@+id/button_sms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取短信"
+                android:textColor="#ffffff"
+                />
+
+
+            <Button
+                android:id="@+id/button_jiaoziplayer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="饺子视频"
+                />
+
+            <Button
+                android:id="@+id/button_pdfViewer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PDFViewer"
+                />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
+
+
+
+</LinearLayout>
