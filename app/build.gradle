@@ -95,6 +95,9 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    //numberprogressbar
+    implementation 'com.daimajia.numberprogressbar:library:1.4@aar'
+
 
 
 }

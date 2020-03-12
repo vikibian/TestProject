@@ -6,7 +6,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.view.View;
+import android.widget.LinearLayout;
 
+import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.github.barteksc.pdfviewer.PDFView;
 import com.neu.testimageload.R;
 import com.neu.testimageload.okhttp.OkHttp;
@@ -19,12 +22,18 @@ import okhttp3.Call;
 public class PDFViewerActivity extends AppCompatActivity {
     private static String TAG = "PDFViewerActivity";
     private PDFView pdfView;
+    private NumberProgressBar numberProgressBar;
+    private LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pdfviewer);
         pdfView = findViewById(R.id.pdfView);
+
+        numberProgressBar = findViewById(R.id.number_progress_bar);
+        linearLayout = findViewById(R.id.FileRead_lin);
+
         String path = Environment.getExternalStorageDirectory().getAbsolutePath();
         Log.e(TAG," absolutepath path:"+path);
 //        File pdfFile = new File(path+"/AlphaMap/58号文.pdf");
@@ -53,6 +62,15 @@ public class PDFViewerActivity extends AppCompatActivity {
         String name = "test.pdf";
         if (folder.exists()){
             okHttp.downloadFile(pdf, new FileCallBack(pdfname,name) {
+
+                @Override
+                public void inProgress(float progress, long total, int id) {
+                    numberProgressBar.setProgress((int) (progress*100));
+                    if (progress == 1){
+                        linearLayout.setVisibility(View.INVISIBLE);
+                    }
+                }
+
                 @Override
                 public void onError(Call call, Exception e, int id) {
                     Log.e(TAG," error: "+e.toString());
