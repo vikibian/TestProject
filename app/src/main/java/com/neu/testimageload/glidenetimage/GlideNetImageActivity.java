@@ -3,8 +3,12 @@ package com.neu.testimageload.glidenetimage;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.neu.testimageload.R;
 
@@ -12,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GlideNetImageActivity extends AppCompatActivity {
+    private static String TAG = "GlideNetImageActivity";
 
     private ImageView mImageView;
     private String photoPath;
@@ -31,7 +36,9 @@ public class GlideNetImageActivity extends AppCompatActivity {
         photoPaths.add("http://39.97.108.172:8080/pic/123456789103Image0.jpg");
         photoPaths.add("http://39.97.108.172:8080/pic/ 123456789102Image0.jpg");
 
-        checkPhotoListViewAdapter = new CheckPhotoListViewAdapter(this,photoPaths);
+        checkPhotoListViewAdapter = new CheckPhotoListViewAdapter(this, photoPaths);
         photoCheckListview.setAdapter(checkPhotoListViewAdapter);
+
+
     }
 }

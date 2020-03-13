@@ -16,7 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pdfView.PDFViewerActivity"></activity>
+        <activity android:name=".multilevelTreeList.MultilevelTreeListActivity"></activity>
+        <activity android:name=".androidtree.activity.SingleFragmentActivity" />
+        <activity android:name=".androidtree.AndroidTreeActivity" />
+        <activity android:name=".listitem.ListItemActivity" />
+        <activity android:name=".pdfView.PDFViewerActivity" />
         <activity
             android:name=".jiaoziplayer.JiaoziPlayerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden" />

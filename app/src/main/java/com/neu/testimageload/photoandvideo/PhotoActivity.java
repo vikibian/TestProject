@@ -25,8 +25,11 @@ import com.neu.testimageload.R;
 import com.neu.testimageload.SearchView.SearchViewActivity;
 import com.neu.testimageload.SmartTable.SmartTableActivity;
 import com.neu.testimageload.VideoRecordDemo.VideoRecordDemoActivity;
+import com.neu.testimageload.androidtree.AndroidTreeActivity;
 import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
 import com.neu.testimageload.jiaoziplayer.JiaoziPlayerActivity;
+import com.neu.testimageload.listitem.ListItemActivity;
+import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
 import com.neu.testimageload.sms.SmsActivity;
@@ -56,6 +59,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_sms;
     private Button button_jiaoziplayer;
     private Button button_pdfViewer;
+    private Button button_listitem;
+    private Button button_androidtree;
+    private Button button_multilevelTreeList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -183,10 +189,16 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_sms = findViewById(R.id.button_sms);
         button_jiaoziplayer = findViewById(R.id.button_jiaoziplayer);
         button_pdfViewer = findViewById(R.id.button_pdfViewer);
+        button_listitem = findViewById(R.id.button_listitem);
+        button_androidtree = findViewById(R.id.button_androidtree);
+        button_multilevelTreeList = findViewById(R.id.button_multilevelTreeList);
 
 
         button_jiaoziplayer.setOnClickListener(this);
         button_pdfViewer.setOnClickListener(this);
+        button_listitem.setOnClickListener(this);
+        button_androidtree.setOnClickListener(this);
+        button_multilevelTreeList.setOnClickListener(this);
     }
 
 
@@ -301,6 +313,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_pdfViewer:
                 startActivity(new Intent(PhotoActivity.this, PDFViewerActivity.class));
+                break;
+            case R.id.button_listitem:
+                startActivity(new Intent(PhotoActivity.this, ListItemActivity.class));
+                break;
+            case R.id.button_androidtree:
+                startActivity(new Intent(PhotoActivity.this, AndroidTreeActivity.class));
+                break;
+            case R.id.button_multilevelTreeList:
+                startActivity(new Intent(PhotoActivity.this, MultilevelTreeListActivity.class));
                 break;
             default:
                 break;
