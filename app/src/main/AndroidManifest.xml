@@ -16,7 +16,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listitem.zhenggai.RectifyItemActivity"></activity>
+        <activity android:name=".answerlist.AnswerListActivity"></activity>
+        <activity android:name=".listitem.zhenggai.RectifyItemActivity" />
         <activity android:name=".listitem.zhenggai.RectifyActivity" />
         <activity android:name=".pdfprint.PdfReadActivity" />
         <activity android:name=".pdfprint.PrintPdfActivity" />

@@ -64,6 +64,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_androidtree;
     private Button button_multilevelTreeList;
     private Button button_editpdf;
+    private Button button_answerlist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -195,6 +196,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_androidtree = findViewById(R.id.button_androidtree);
         button_multilevelTreeList = findViewById(R.id.button_multilevelTreeList);
         button_editpdf = findViewById(R.id.button_editpdf);
+        button_answerlist = findViewById(R.id.button_answerlist);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -203,6 +205,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_androidtree.setOnClickListener(this);
         button_multilevelTreeList.setOnClickListener(this);
         button_editpdf.setOnClickListener(this);
+        button_answerlist.setOnClickListener(this);
     }
 
 
@@ -328,6 +331,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(PhotoActivity.this, MultilevelTreeListActivity.class));
                 break;
             case R.id.button_editpdf:
+                startActivity(new Intent(PhotoActivity.this, PrintPdfActivity.class));
+                break;
+            case R.id.button_answerlist:
                 startActivity(new Intent(PhotoActivity.this, PrintPdfActivity.class));
                 break;
             default:
