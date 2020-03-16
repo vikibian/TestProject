@@ -9,14 +9,18 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name=".surfaceview.MyApp"
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multilevelTreeList.MultilevelTreeListActivity"></activity>
+        <activity android:name=".listitem.zhenggai.RectifyItemActivity"></activity>
+        <activity android:name=".listitem.zhenggai.RectifyActivity" />
+        <activity android:name=".pdfprint.PdfReadActivity" />
+        <activity android:name=".pdfprint.PrintPdfActivity" />
+        <activity android:name=".multilevelTreeList.MultilevelTreeListActivity" />
         <activity android:name=".androidtree.activity.SingleFragmentActivity" />
         <activity android:name=".androidtree.AndroidTreeActivity" />
         <activity android:name=".listitem.ListItemActivity" />

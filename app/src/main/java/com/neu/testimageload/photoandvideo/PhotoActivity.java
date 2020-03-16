@@ -32,6 +32,7 @@ import com.neu.testimageload.listitem.ListItemActivity;
 import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
+import com.neu.testimageload.pdfprint.PrintPdfActivity;
 import com.neu.testimageload.sms.SmsActivity;
 import com.neu.testimageload.surfaceview.SurfaceViewActivity;
 import com.neu.testimageload.toolbar.ToolbarActivity;
@@ -62,6 +63,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_listitem;
     private Button button_androidtree;
     private Button button_multilevelTreeList;
+    private Button button_editpdf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,6 +194,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_listitem = findViewById(R.id.button_listitem);
         button_androidtree = findViewById(R.id.button_androidtree);
         button_multilevelTreeList = findViewById(R.id.button_multilevelTreeList);
+        button_editpdf = findViewById(R.id.button_editpdf);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -199,6 +202,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_listitem.setOnClickListener(this);
         button_androidtree.setOnClickListener(this);
         button_multilevelTreeList.setOnClickListener(this);
+        button_editpdf.setOnClickListener(this);
     }
 
 
@@ -322,6 +326,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_multilevelTreeList:
                 startActivity(new Intent(PhotoActivity.this, MultilevelTreeListActivity.class));
+                break;
+            case R.id.button_editpdf:
+                startActivity(new Intent(PhotoActivity.this, PrintPdfActivity.class));
                 break;
             default:
                 break;

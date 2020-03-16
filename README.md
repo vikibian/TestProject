@@ -48,15 +48,14 @@ Github仓库地址：[CircleImageView](https://github.com/hdodenhof/CircleImageV
 Github仓库地址：[NumberProgressBar](https://github.com/daimajia/NumberProgressBar "NumberProgressBar")
 
 ### 16.Print
-Github仓库地址：[Print](https://github.com/johnkil/Print/ "Print")
+Github仓库地址：[Print](https://github.com/johnkil/Print/ "Print")  
 项目中只是包含了这个库，具体使用还没有查看过。在测试AndroidTreeView项目是集成的。
 
 ### 17.MultilevelTreeList
-Github仓库地址：[MultilevelTreeList](https://github.com/zhangke3016/MultilevelTreeList "MultilevelTreeList")
+Github仓库地址：[MultilevelTreeList](https://github.com/zhangke3016/MultilevelTreeList "MultilevelTreeList")  
 实现了Android中listview、RecycleView形式的树形层级结构，感觉这个库简单好用。但是我在测试时，只试验了Listview的形式。
 
-### 17.AndroidTreeView
-Github仓库地址：[AndroidTreeView](https://github.com/bmelnychuk/AndroidTreeView "AndroidTreeView")
-也实现了Android中的树形层级结构，感觉这个库很强大，而且外观好看，但是在将该库demo中的代码移植到自己项目中时，
-不知道为什么发现自己项目中的二级目录下，没有缩进。
+### 18.AndroidTreeView
+Github仓库地址：[AndroidTreeView](https://github.com/bmelnychuk/AndroidTreeView "AndroidTreeView")  
+也实现了Android中的树形层级结构，感觉这个库很强大，而且外观好看，但是在将该库demo中的代码移植到自己项目中时，不知道为什么发现自己项目中的二级目录下，没有缩进。
 

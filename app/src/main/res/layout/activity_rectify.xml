@@ -4,22 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".listitem.ListItemActivity">
-
-    <Button
-        android:id="@+id/button_adjust"
-        android:text="整改"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    tools:context=".listitem.zhenggai.RectifyActivity">
 
     <ListView
-        android:id="@+id/listview_test"
+        android:id="@+id/rectify_listview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     </ListView>
-
-
 
 </LinearLayout>
