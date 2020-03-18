@@ -148,6 +148,13 @@
                 android:text="问题列表"
                 />
 
+            <Button
+                android:id="@+id/button_rectifyresult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="整改情况"
+                />
+
         </LinearLayout>
 
 

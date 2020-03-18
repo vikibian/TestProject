@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.neu.testimageload">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,8 +16,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".answerlist.AnswerListActivity"></activity>
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+        <activity android:name=".rectifyresult.RectifyResultActivity"></activity>
+        <activity android:name=".answerlist.AnswerListActivity" />
         <activity android:name=".listitem.zhenggai.RectifyItemActivity" />
         <activity android:name=".listitem.zhenggai.RectifyActivity" />
         <activity android:name=".pdfprint.PdfReadActivity" />

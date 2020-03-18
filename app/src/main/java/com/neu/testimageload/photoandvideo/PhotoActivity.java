@@ -26,6 +26,7 @@ import com.neu.testimageload.SearchView.SearchViewActivity;
 import com.neu.testimageload.SmartTable.SmartTableActivity;
 import com.neu.testimageload.VideoRecordDemo.VideoRecordDemoActivity;
 import com.neu.testimageload.androidtree.AndroidTreeActivity;
+import com.neu.testimageload.answerlist.AnswerListActivity;
 import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
 import com.neu.testimageload.jiaoziplayer.JiaoziPlayerActivity;
 import com.neu.testimageload.listitem.ListItemActivity;
@@ -33,9 +34,12 @@ import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
 import com.neu.testimageload.pdfprint.PrintPdfActivity;
+import com.neu.testimageload.rectifyresult.RectifyResultActivity;
 import com.neu.testimageload.sms.SmsActivity;
 import com.neu.testimageload.surfaceview.SurfaceViewActivity;
 import com.neu.testimageload.toolbar.ToolbarActivity;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.Logger;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
@@ -65,6 +69,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_multilevelTreeList;
     private Button button_editpdf;
     private Button button_answerlist;
+    private Button button_rectifyresult;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +78,22 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 
         setContentView(R.layout.activity_photo);
+
+        Logger.addLogAdapter(new AndroidLogAdapter());
         //Toolbar toolbar;
 //        setTitleCenter();
         //initToolbar(1,1,1);
 
         //getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
 
-
+        Logger.d("debug1");
+        Logger.d("debug2");
+        Logger.d("debug3");
+        Logger.e("error");
+        Logger.w("warning");
+        Logger.v("verbose");
+        Logger.i("information");
+        Logger.wtf("What a Terrible Failure");
         checkPermissions();
 
         initView();
@@ -197,6 +211,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_multilevelTreeList = findViewById(R.id.button_multilevelTreeList);
         button_editpdf = findViewById(R.id.button_editpdf);
         button_answerlist = findViewById(R.id.button_answerlist);
+        button_rectifyresult = findViewById(R.id.button_rectifyresult);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -206,6 +221,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_multilevelTreeList.setOnClickListener(this);
         button_editpdf.setOnClickListener(this);
         button_answerlist.setOnClickListener(this);
+        button_rectifyresult.setOnClickListener(this);
     }
 
 
@@ -334,7 +350,10 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 startActivity(new Intent(PhotoActivity.this, PrintPdfActivity.class));
                 break;
             case R.id.button_answerlist:
-                startActivity(new Intent(PhotoActivity.this, PrintPdfActivity.class));
+                startActivity(new Intent(PhotoActivity.this, AnswerListActivity.class));
+                break;
+            case R.id.button_rectifyresult:
+                startActivity(new Intent(PhotoActivity.this, RectifyResultActivity.class));
                 break;
             default:
                 break;
