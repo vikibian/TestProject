@@ -155,6 +155,13 @@
                 android:text="整改情况"
                 />
 
+            <Button
+                android:id="@+id/button_getPhonenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="获取手机号"
+                />
+
         </LinearLayout>
 
 

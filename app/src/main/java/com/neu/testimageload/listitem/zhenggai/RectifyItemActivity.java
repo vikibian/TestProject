@@ -8,6 +8,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
@@ -42,6 +43,11 @@ public class RectifyItemActivity extends AppCompatActivity  {
     private TextView textView_selectTime;
     private TextView textView_rectifyTime;
     private Button button;
+    final int REQUEST_TEST = 66;
+
+    private String testvideoPath = " ";
+    private String ImagePath = "";
+    private String VideoPath = "";
 
     private int hourOfDay, minute;
 
@@ -118,8 +124,8 @@ public class RectifyItemActivity extends AppCompatActivity  {
                 startPhotoGallery();
                 break;
             case 2:
-//                Intent intentall = new Intent(RectifyItemActivity.this,PhotoVideoActivity.class);
-//                startActivityForResult(intentall,REQUEST_TEST);
+                Intent intentall = new Intent(RectifyItemActivity.this,PhotoVideoActivity.class);
+                startActivityForResult(intentall,REQUEST_TEST);
                 break;
             case 3:
                 break;
@@ -169,19 +175,45 @@ public class RectifyItemActivity extends AppCompatActivity  {
         String videoString = new String();
 
 
-        //Masstise返回的图片数据
-        if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
-            Log.d("Matisse", "Uris: " + Matisse.obtainResult(data));
-            Log.d("Matisse", "Paths: " + Matisse.obtainPathResult(data));
-            Log.e("Matisse", "Use the selected photos with original: "+String.valueOf(Matisse.obtainOriginalState(data)));
-            for (int i = 0;i<Matisse.obtainPathResult(data).size();i++){
-                pathlistOfPhoto.add(Matisse.obtainPathResult(data).get(i));
+        if (resultCode == RESULT_OK) {
+
+            if (requestCode == REQUEST_TEST) {
+
+                imgString = data.getStringExtra("ImagePath");
+                testvideoPath = data.getStringExtra("VideoPath");
+                videoString = data.getStringExtra("VideoPath");
+                //不需要旋转90度  需要在设置图片的时候进行判断
+
+                //在此处需要更新图片数组
+                if (!(imgString.equals(""))) {
+                    ImagePath += imgString + ",";
+                    imgString = Environment.getExternalStorageDirectory() + "/DCIM/" + "viki" + "/Photo/" + imgString;
+                    pathlistOfPhoto.add(imgString);
+                }
+                if (!(testvideoPath.equals(""))) {
+                    VideoPath += videoString + ",";
+                    videoString = Environment.getExternalStorageDirectory() + "/DCIM/" + "viki" + "/Video/" + videoString;
+                    pathlistOfPhoto.add(videoString);
+                }
+                suggestionGridViewAdapter = new SuggestionGridViewAdapter(getApplicationContext(), pathlistOfPhoto, 1);
+                gridView.setAdapter(suggestionGridViewAdapter);
+
             }
 
-            suggestionGridViewAdapter = new SuggestionGridViewAdapter(getApplicationContext(), pathlistOfPhoto,0);
-            gridView.setAdapter(suggestionGridViewAdapter);
-//            List<Uri> result = Matisse.obtainResult(data);
-//            textView.setText(result.toString());
+            //Masstise返回的图片数据
+            if (requestCode == REQUEST_CODE_CHOOSE && resultCode == RESULT_OK) {
+                Log.d("Matisse", "Uris: " + Matisse.obtainResult(data));
+                Log.d("Matisse", "Paths: " + Matisse.obtainPathResult(data));
+                Log.e("Matisse", "Use the selected photos with original: "+String.valueOf(Matisse.obtainOriginalState(data)));
+                for (int i = 0;i<Matisse.obtainPathResult(data).size();i++){
+                    pathlistOfPhoto.add(Matisse.obtainPathResult(data).get(i));
+                }
+
+                suggestionGridViewAdapter = new SuggestionGridViewAdapter(getApplicationContext(), pathlistOfPhoto,0);
+                gridView.setAdapter(suggestionGridViewAdapter);
+                //            List<Uri> result = Matisse.obtainResult(data);
+                //            textView.setText(result.toString());
+            }
         }
     }
 

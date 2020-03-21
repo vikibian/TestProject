@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.neu.testimageload.BuildConfig;
 import com.neu.testimageload.ImageloaderListviewActivity;
@@ -27,6 +29,7 @@ import com.neu.testimageload.SmartTable.SmartTableActivity;
 import com.neu.testimageload.VideoRecordDemo.VideoRecordDemoActivity;
 import com.neu.testimageload.androidtree.AndroidTreeActivity;
 import com.neu.testimageload.answerlist.AnswerListActivity;
+import com.neu.testimageload.getPhoneNumber.GetPhoneNumberActivity;
 import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
 import com.neu.testimageload.jiaoziplayer.JiaoziPlayerActivity;
 import com.neu.testimageload.listitem.ListItemActivity;
@@ -50,7 +53,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class PhotoActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "PhotoActivity";
     private static final int REQUEST_CODE_CHOOSE = 23;
+    public static String phonenumber = "";
     Button button;
     TextView textView;
 
@@ -70,6 +75,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_editpdf;
     private Button button_answerlist;
     private Button button_rectifyresult;
+    private Button button_getPhoneNumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +103,21 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         checkPermissions();
 
         initView();
+
+        //已登录软件便获取手机号
+        //显示用户此前录入的数据
+        SharedPreferences sPreferences = getSharedPreferences("config", MODE_PRIVATE);
+        Log.e(TAG," "+String.valueOf(sPreferences.equals(null)));
+        if (!sPreferences.equals(null)){
+            String username=sPreferences.getString("username", "");
+            Log.e(TAG," "+username.equals(""));
+            Log.e(TAG," "+username.equals(null));
+            if (!username.equals("")){
+                String password =sPreferences.getString("password", "");
+                phonenumber = password;
+                Toast.makeText(this,password,Toast.LENGTH_SHORT).show();
+            }
+        }
 
 
 
@@ -212,6 +233,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_editpdf = findViewById(R.id.button_editpdf);
         button_answerlist = findViewById(R.id.button_answerlist);
         button_rectifyresult = findViewById(R.id.button_rectifyresult);
+        button_getPhoneNumber = findViewById(R.id.button_getPhonenumber);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -222,6 +244,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_editpdf.setOnClickListener(this);
         button_answerlist.setOnClickListener(this);
         button_rectifyresult.setOnClickListener(this);
+        button_getPhoneNumber.setOnClickListener(this);
     }
 
 
@@ -354,6 +377,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_rectifyresult:
                 startActivity(new Intent(PhotoActivity.this, RectifyResultActivity.class));
+                break;
+            case R.id.button_getPhonenumber:
+                startActivity(new Intent(PhotoActivity.this, GetPhoneNumberActivity.class));
                 break;
             default:
                 break;
