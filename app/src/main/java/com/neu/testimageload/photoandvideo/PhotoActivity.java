@@ -39,6 +39,7 @@ import com.neu.testimageload.pdfView.PDFViewerActivity;
 import com.neu.testimageload.pdfprint.PrintPdfActivity;
 import com.neu.testimageload.rectifyresult.RectifyResultActivity;
 import com.neu.testimageload.sms.SmsActivity;
+import com.neu.testimageload.stamper.StamperActivity;
 import com.neu.testimageload.surfaceview.SurfaceViewActivity;
 import com.neu.testimageload.toolbar.ToolbarActivity;
 import com.orhanobut.logger.AndroidLogAdapter;
@@ -76,6 +77,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_answerlist;
     private Button button_rectifyresult;
     private Button button_getPhoneNumber;
+    private Button button_stamper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,13 +87,13 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
         setContentView(R.layout.activity_photo);
 
-        Logger.addLogAdapter(new AndroidLogAdapter());
+
         //Toolbar toolbar;
 //        setTitleCenter();
         //initToolbar(1,1,1);
 
         //getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.title);
-
+        Logger.addLogAdapter(new AndroidLogAdapter());
         Logger.d("debug1");
         Logger.d("debug2");
         Logger.d("debug3");
@@ -234,6 +236,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_answerlist = findViewById(R.id.button_answerlist);
         button_rectifyresult = findViewById(R.id.button_rectifyresult);
         button_getPhoneNumber = findViewById(R.id.button_getPhonenumber);
+        button_stamper = findViewById(R.id.button_stamper);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -245,6 +248,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_answerlist.setOnClickListener(this);
         button_rectifyresult.setOnClickListener(this);
         button_getPhoneNumber.setOnClickListener(this);
+        button_stamper.setOnClickListener(this);
     }
 
 
@@ -380,6 +384,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_getPhonenumber:
                 startActivity(new Intent(PhotoActivity.this, GetPhoneNumberActivity.class));
+                break;
+            case R.id.button_stamper:
+                startActivity(new Intent(PhotoActivity.this, StamperActivity.class));
                 break;
             default:
                 break;

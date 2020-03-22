@@ -91,11 +91,11 @@ dependencies {
     implementation 'com.orhanobut:logger:2.2.0'
     implementation files('libs/eventbus.jar')
     implementation 'com.github.javiersantos:MaterialStyledDialogs:2.1'
-
     implementation 'com.kongzue.dialog_v3:dialog:3.1.8'
-
     //视频和拍照
     implementation 'cjt.library.wheel:camera:1.1.2'
+    implementation 'com.github.KernHu:Stamper:1.1'
+    implementation files('libs/BaiduLBS_Android.jar')
 }
 
 repositories {

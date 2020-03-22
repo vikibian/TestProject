@@ -91,7 +91,7 @@ public class GetPhoneNumberActivity extends AppCompatActivity implements View.On
 //        }
 
         //6.0动态权限获取
-        getPermissions();
+//        getPermissions();
 
 
     }

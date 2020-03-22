@@ -162,6 +162,13 @@
                 android:text="获取手机号"
                 />
 
+            <Button
+                android:id="@+id/button_stamper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Stamper"
+                />
+
         </LinearLayout>
 
 
