@@ -22,6 +22,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.neu.testimageload.BuildConfig;
+import com.neu.testimageload.CheckList.CheckListActivity;
 import com.neu.testimageload.ImageloaderListviewActivity;
 import com.neu.testimageload.R;
 import com.neu.testimageload.SearchView.SearchViewActivity;
@@ -78,6 +79,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_rectifyresult;
     private Button button_getPhoneNumber;
     private Button button_stamper;
+    private Button button_checklist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -237,6 +239,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_rectifyresult = findViewById(R.id.button_rectifyresult);
         button_getPhoneNumber = findViewById(R.id.button_getPhonenumber);
         button_stamper = findViewById(R.id.button_stamper);
+        button_checklist = findViewById(R.id.button_checklist);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -249,6 +252,7 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_rectifyresult.setOnClickListener(this);
         button_getPhoneNumber.setOnClickListener(this);
         button_stamper.setOnClickListener(this);
+        button_checklist.setOnClickListener(this);
     }
 
 
@@ -387,6 +391,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_stamper:
                 startActivity(new Intent(PhotoActivity.this, StamperActivity.class));
+                break;
+            case R.id.button_checklist:
+                startActivity(new Intent(PhotoActivity.this, CheckListActivity.class));
                 break;
             default:
                 break;
