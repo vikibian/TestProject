@@ -4,30 +4,44 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.PixelFormat;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.ContextMenu;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.bm.library.PhotoView;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.neu.testimageload.R;
+import com.neu.testimageload.imagedialog.ImageDialogActivity;
 import com.neu.testimageload.listitem.other.SidebarUtils;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
 import com.zhihu.matisse.internal.entity.CaptureStrategy;
 
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +65,11 @@ public class RectifyItemActivity extends AppCompatActivity  {
 
     private int hourOfDay, minute;
 
+    private Dialog dialog = null;
+    private ImageView image;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,15 +89,20 @@ public class RectifyItemActivity extends AppCompatActivity  {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 deleteIndex = position;
-                if (pathlistOfPhoto.size()==position){
-                    view.showContextMenu();
-                }else {
-                    view.showContextMenu();
-                }
-
+//                if (pathlistOfPhoto.size()==position){
+//                    view.showContextMenu();
+//                }else {
+//                    view.showContextMenu();
+//                }
+                //展示选中图片
+//                showImage(position);
+                Toast.makeText(RectifyItemActivity.this, ""+position, Toast.LENGTH_SHORT).show();
+                dialog.show();
 
             }
         });
+
+        startLoadImage();
 
         gridView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
@@ -110,6 +134,98 @@ public class RectifyItemActivity extends AppCompatActivity  {
         button = findViewById(R.id.rectify_item_save);
 
     }
+
+    private void startLoadImage() {
+        //展示在dialog上面的大图
+        dialog = new Dialog(RectifyItemActivity.this,R.style.FullScreen);
+
+        WindowManager.LayoutParams attributes = getWindow().getAttributes();
+        attributes.width = WindowManager.LayoutParams.MATCH_PARENT;
+        attributes.height = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(attributes);
+
+        image = getImageView();
+        dialog.setContentView(image);
+
+        //大图的点击事件（点击让他消失）
+        image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                Log.e(TAG, "onClick: ");
+            }
+        });
+    }
+
+    //动态的ImageView
+    private ImageView getImageView(){
+        ImageView imageView = new ImageView(this);
+
+        //宽高
+        imageView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        //imageView设置图片
+//        @SuppressLint("ResourceType") InputStream is = getResources().openRawResource(R.drawable.ic_empty_zhihu);
+//
+//        Drawable drawable = BitmapDrawable.createFromStream(is, null);
+//        imageView.setImageDrawable(drawable);
+        Glide
+                .with(RectifyItemActivity.this)
+                .load("http://img.shu163.com/uploadfiles/wallpaper/2010/6/2010063006111517.jpg")
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(imageView);
+
+        return imageView;
+    }
+
+//    private void initImageView(int position) {
+//        final WindowManager windowManager = getWindowManager();
+//        final RelativeLayout relativeLayout = new RelativeLayout(this);
+//        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+//
+//        layoutParams.width =WindowManager.LayoutParams.MATCH_PARENT;
+//        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+//        //FLAG_LAYOUT_IN_SCREEN
+//        layoutParams.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN;
+//        layoutParams.format = PixelFormat.RGBA_8888;//让背景透明，放大过程可以看到当前界面
+//        layoutParams.verticalMargin = 0;
+//        windowManager.addView(relativeLayout,layoutParams);
+//
+//
+//
+//        final PhotoView photoview = new PhotoView(this);
+//        photoview.enable();
+//        photoview.setScaleType(ImageView.ScaleType.FIT_CENTER);
+//        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.MATCH_PARENT);
+//        relativeLayout.addView(photoview,params);
+//        relativeLayout.setFocusableInTouchMode(true);
+////        Picasso.with(getContext()).load(imageId).into(photoview);
+//        Glide
+//                .with(relativeLayout.getContext())
+//                .load(imageList.get(position))
+//                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+//                .into(photoview);
+//
+//        photoview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                windowManager.removeView(relativeLayout);
+//            }
+//        });
+//
+//        relativeLayout.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//                if (keyCode == KeyEvent.KEYCODE_BACK) {
+//                    if (null != windowManager && null != relativeLayout) {
+//                        windowManager.removeView(relativeLayout);
+//                    }
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+//    }
 
     /**
      * 虽然menu选项在SuggestionGridViewAdapter.java文件中但是一样可以使用这里的选择事件按钮
@@ -217,5 +333,44 @@ public class RectifyItemActivity extends AppCompatActivity  {
         }
     }
 
+
+    public void showImage(int position){
+
+        dialog = new Dialog(RectifyItemActivity.this,R.style.FullScreen);
+        View vview = View.inflate(getApplicationContext(),R.layout.fujian_layout_redetection,null);
+        ImageView imageView = vview.findViewById(R.id.tv_tupian);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        Log.e(TAG, "showImage: 测试" );
+
+        Bitmap bitmap = getLocalBitmap("1");
+        imageView.setImageBitmap(bitmap);
+//        imageView.setImageResource(R.drawable.atguigu_logo);
+        WindowManager.LayoutParams artt = getWindow().getAttributes();
+        artt.width = WindowManager.LayoutParams.MATCH_PARENT;
+        artt.height = WindowManager.LayoutParams.MATCH_PARENT;
+        dialog.getWindow().setAttributes(artt);
+        dialog.setContentView(vview);
+        dialog.show();
+        Log.e(TAG, "showImage: show后面");
+
+    }
+
+    //本地获取图片
+    public Bitmap getLocalBitmap(String url){
+        try {
+            FileInputStream fileInputStream = new FileInputStream("/storage/emulated/0/DCIM/Camera/1582464108204IMG.jpg");
+            return BitmapFactory.decodeStream(fileInputStream);
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return  null;
+        }
+    }
 
 }

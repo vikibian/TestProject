@@ -30,14 +30,17 @@ import com.neu.testimageload.SmartTable.SmartTableActivity;
 import com.neu.testimageload.VideoRecordDemo.VideoRecordDemoActivity;
 import com.neu.testimageload.androidtree.AndroidTreeActivity;
 import com.neu.testimageload.answerlist.AnswerListActivity;
+import com.neu.testimageload.checkphotovideo.CheckPhotoVideoActivity;
 import com.neu.testimageload.getPhoneNumber.GetPhoneNumberActivity;
 import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
+import com.neu.testimageload.imagedialog.ImageDialogActivity;
 import com.neu.testimageload.jiaoziplayer.JiaoziPlayerActivity;
 import com.neu.testimageload.listitem.ListItemActivity;
 import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
 import com.neu.testimageload.pdfprint.PrintPdfActivity;
+import com.neu.testimageload.recheck.ReCheckActivity;
 import com.neu.testimageload.rectifyresult.RectifyResultActivity;
 import com.neu.testimageload.sms.SmsActivity;
 import com.neu.testimageload.stamper.StamperActivity;
@@ -80,6 +83,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_getPhoneNumber;
     private Button button_stamper;
     private Button button_checklist;
+    private Button button_recheck;
+    private Button button_imagedialog;
+    private Button button_checkphotovideo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -240,6 +246,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_getPhoneNumber = findViewById(R.id.button_getPhonenumber);
         button_stamper = findViewById(R.id.button_stamper);
         button_checklist = findViewById(R.id.button_checklist);
+        button_recheck = findViewById(R.id.button_recheck);
+        button_imagedialog = findViewById(R.id.button_imagedialog);
+        button_checkphotovideo = findViewById(R.id.button_checkphotovideo);
 
 
         button_jiaoziplayer.setOnClickListener(this);
@@ -253,6 +262,9 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
         button_getPhoneNumber.setOnClickListener(this);
         button_stamper.setOnClickListener(this);
         button_checklist.setOnClickListener(this);
+        button_recheck.setOnClickListener(this);
+        button_imagedialog.setOnClickListener(this);
+        button_checkphotovideo.setOnClickListener(this);
     }
 
 
@@ -394,6 +406,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
                 break;
             case R.id.button_checklist:
                 startActivity(new Intent(PhotoActivity.this, CheckListActivity.class));
+                break;
+            case R.id.button_recheck:
+                startActivity(new Intent(PhotoActivity.this, ReCheckActivity.class));
+                break;
+            case R.id.button_imagedialog:
+                startActivity(new Intent(PhotoActivity.this, ImageDialogActivity.class));
+                break;
+            case R.id.button_checkphotovideo:
+                startActivity(new Intent(PhotoActivity.this, CheckPhotoVideoActivity.class));
                 break;
             default:
                 break;

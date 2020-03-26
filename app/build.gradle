@@ -96,6 +96,11 @@ dependencies {
     implementation 'cjt.library.wheel:camera:1.1.2'
     implementation 'com.github.KernHu:Stamper:1.1'
     implementation files('libs/BaiduLBS_Android.jar')
+
+    //YCVideoPlayer
+    implementation 'cn.yc:YCVideoPlayerLib:2.6.6'
+
+    implementation 'com.qmuiteam:qmui:2.0.0-alpha04'
 }
 
 repositories {

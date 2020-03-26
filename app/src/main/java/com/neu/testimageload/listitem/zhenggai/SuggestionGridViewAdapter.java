@@ -1,5 +1,6 @@
 package com.neu.testimageload.listitem.zhenggai;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -10,8 +11,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 
@@ -20,6 +23,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import com.neu.testimageload.R;
+import com.neu.testimageload.imagedialog.ImageDialogActivity;
 
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -152,6 +156,7 @@ public class SuggestionGridViewAdapter extends BaseAdapter {
 
 
     class ViewHolder{
+        private Dialog dialog;
         ImageView imageView;
 
         public ViewHolder(View view){

@@ -9,7 +9,10 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.CheckBox;
 import android.widget.GridView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.neu.testimageload.R;
@@ -19,17 +22,39 @@ import com.neu.testimageload.listitem.zhenggai.SuggestionGridViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RectifyResultActivity extends AppCompatActivity {
+public class RectifyResultActivity extends AppCompatActivity implements View.OnClickListener{
     private GridView gridView;
     private SuggestionGridViewAdapter suggestionGridViewAdapter;
     public List<String> pathlistOfPhoto = new ArrayList<>();
     private int deleteIndex;
+    private CheckBox recify_result_qualified;
+    private CheckBox recify_result_unqualified;
+    private TextView recify_result_way_textview;
+
+    private CheckBox recify_result_way_limit;
+    private CheckBox recify_result_way_stop;
+    private LinearLayout recify_result_way_checkbox_lin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rectify_result);
         deleteIndex = -1;
+
+        recify_result_qualified = findViewById(R.id.rectify_result_qualified);
+        recify_result_unqualified = findViewById(R.id.rectify_result_unqualified);
+        recify_result_way_textview = findViewById(R.id.rectify_result_item_way_textview);
+        recify_result_way_limit = findViewById(R.id.rectify_result_way_limit);
+        recify_result_way_stop = findViewById(R.id.rectify_result_way_stop);
+        recify_result_way_checkbox_lin = findViewById(R.id.rectify_result_way_checkbox_lin);
+
+        //默认合格
+        recify_result_qualified.setChecked(true);
+
+        recify_result_qualified.setOnClickListener(this);
+        recify_result_unqualified.setOnClickListener(this);
+        recify_result_way_limit.setOnClickListener(this);
+        recify_result_way_stop.setOnClickListener(this);
 
         gridView = findViewById(R.id.suggestion_gridview);
         suggestionGridViewAdapter = new SuggestionGridViewAdapter(getApplicationContext(), pathlistOfPhoto,0);
@@ -94,5 +119,27 @@ public class RectifyResultActivity extends AppCompatActivity {
 
         }
         return super.onContextItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.rectify_result_qualified:
+                recify_result_unqualified.setChecked(false);
+                break;
+            case R.id.rectify_result_unqualified:
+                recify_result_qualified.setChecked(false);
+                recify_result_way_textview.setVisibility(View.INVISIBLE);
+                recify_result_way_checkbox_lin.setVisibility(View.VISIBLE);
+                break;
+            case R.id.rectify_result_way_limit:
+                recify_result_way_stop.setChecked(false);
+                Toast.makeText(getApplicationContext(),recify_result_way_limit.getText(),Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.rectify_result_way_stop:
+                recify_result_way_limit.setChecked(false);
+                Toast.makeText(getApplicationContext(),recify_result_way_stop.getText(),Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.neu.testimageload.CheckList;
+package com.neu.testimageload.recheck;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,20 +11,22 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.neu.testimageload.CheckList.CheckListActivity;
+import com.neu.testimageload.CheckList.CircleRelativeLayout;
 import com.neu.testimageload.R;
 
-public class CheckListActivity extends AppCompatActivity {
-    private static final String TAG = "CheckListActivity";
+public class ReCheckActivity extends AppCompatActivity {
+    private static final String TAG = "ReCheckActivity";
     private ListView lv_check_list;
     private static final String[] data = { "北京", "上海", "武汉", "广州", "西安", "南京", "合肥","上海", "武汉", "广州", "西安", "南京", "合肥" };
     private CheckAdapter checkAdapter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_check_list);
-        lv_check_list = findViewById(R.id.card_listView);
+        setContentView(R.layout.activity_re_check);
+
+        lv_check_list = findViewById(R.id.recify_listView);
         checkAdapter = new CheckAdapter();
         lv_check_list.setAdapter(checkAdapter);
 
@@ -34,9 +36,7 @@ public class CheckListActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),""+position,Toast.LENGTH_SHORT).show();
             }
         });
-
     }
-
 
     class CheckAdapter extends BaseAdapter {
 
@@ -64,7 +64,7 @@ public class CheckListActivity extends AppCompatActivity {
             //如果没有复用的
             if(convertView == null){
                 //加载item的布局
-                convertView = View.inflate(getApplicationContext(), R.layout.test_check_list, null);
+                convertView = View.inflate(getApplicationContext(), R.layout.test_re_check, null);
 
             }
 
@@ -76,8 +76,8 @@ public class CheckListActivity extends AppCompatActivity {
 //            TextView tv_check_endtime = convertView.findViewById(R.id.tv_check_endtime);
 //            TextView tv_issave_device = convertView.findViewById(R.id.tv_issave_device);
 //            LinearLayout ll_check_bg = convertView.findViewById(R.id.ll_check_bg);
-            TextView check_list_name = convertView.findViewById(R.id.tv_check_device);
-            CircleRelativeLayout check_list_imageview = convertView.findViewById(R.id.check_list_imagebutton);
+            TextView check_list_name = convertView.findViewById(R.id.recify_item_text_context);
+//            CircleRelativeLayout check_list_imageview = convertView.findViewById(R.id.check_list_imagebutton);
 
             check_list_name.setText(data[position]);
 
@@ -90,7 +90,7 @@ public class CheckListActivity extends AppCompatActivity {
 
             }
 //            check_list_imageview.setImageResource(R.color.red);
-            check_list_imageview.setColor(color);
+//            check_list_imageview.setColor(color);
             //ll_check_bg.setBackgroundColor(color);
 //            tv_check_device.setTextColor(color);
 //            tv_check_address.setTextColor(color);

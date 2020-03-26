@@ -35,13 +35,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".CheckList.CheckListActivity"></activity>
+        <activity android:name=".checkphotovideo.CheckPhotoVideoActivity"></activity>
+        <activity android:name=".imagedialog.ImageDialogActivity" />
+        <activity android:name=".recheck.ReCheckActivity" />
+        <activity android:name=".CheckList.CheckListActivity" />
         <activity android:name=".stamper.StamperActivity" />
         <activity android:name=".listitem.zhenggai.PhotoVideoActivity" />
         <activity android:name=".getPhoneNumber.GetPhoneNumberActivity" />
         <activity android:name=".rectifyresult.RectifyResultActivity" />
         <activity android:name=".answerlist.AnswerListActivity" />
-        <activity android:name=".listitem.zhenggai.RectifyItemActivity" />
+        <activity
+            android:name=".listitem.zhenggai.RectifyItemActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".listitem.zhenggai.RectifyActivity" />
         <activity android:name=".pdfprint.PdfReadActivity" />
         <activity android:name=".pdfprint.PrintPdfActivity" />
