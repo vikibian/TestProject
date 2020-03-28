@@ -35,7 +35,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".checkphotovideo.CheckPhotoVideoActivity"></activity>
+        <activity android:name=".drawableview.test2.Drawable2Activity"></activity>
+        <activity android:name=".drawableview.test1.Drawable1Activity" />
+        <activity android:name=".drawableview.github.DrawableActivity" />
+        <activity android:name=".checkphotovideo.CheckPhotoVideoActivity" />
         <activity android:name=".imagedialog.ImageDialogActivity" />
         <activity android:name=".recheck.ReCheckActivity" />
         <activity android:name=".CheckList.CheckListActivity" />

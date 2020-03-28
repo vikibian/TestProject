@@ -196,6 +196,26 @@
                 android:text="check图片视频"
                 />
 
+            <Button
+                android:id="@+id/button_drawableview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="drawableview"
+                />
+            <Button
+                android:id="@+id/button_drawableview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="drawableview1"
+                />
+
+            <Button
+                android:id="@+id/button_drawableview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="drawableview2"
+                />
+
         </LinearLayout>
 
 

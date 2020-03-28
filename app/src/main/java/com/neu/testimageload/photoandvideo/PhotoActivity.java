@@ -31,6 +31,9 @@ import com.neu.testimageload.VideoRecordDemo.VideoRecordDemoActivity;
 import com.neu.testimageload.androidtree.AndroidTreeActivity;
 import com.neu.testimageload.answerlist.AnswerListActivity;
 import com.neu.testimageload.checkphotovideo.CheckPhotoVideoActivity;
+import com.neu.testimageload.drawableview.github.DrawableActivity;
+import com.neu.testimageload.drawableview.test1.Drawable1Activity;
+import com.neu.testimageload.drawableview.test2.Drawable2Activity;
 import com.neu.testimageload.getPhoneNumber.GetPhoneNumberActivity;
 import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
 import com.neu.testimageload.imagedialog.ImageDialogActivity;
@@ -56,6 +59,10 @@ import com.zhihu.matisse.internal.entity.CaptureStrategy;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PhotoActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "PhotoActivity";
@@ -86,14 +93,20 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     private Button button_recheck;
     private Button button_imagedialog;
     private Button button_checkphotovideo;
+    @BindView(value = R.id.button_drawableview)
+    Button button_drawableview;
+    @BindView(value = R.id.button_drawableview1)
+    Button button_drawableview1;
+    @BindView(R.id.button_drawableview2)
+    Button button_drawableview2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         //requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
 
         setContentView(R.layout.activity_photo);
+        ButterKnife.bind(this);
 
 
         //Toolbar toolbar;
@@ -419,5 +432,20 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
             default:
                 break;
         }
+    }
+
+    @OnClick(R.id.button_drawableview)
+    void button_drawableview(View view){
+        startActivity(new Intent(PhotoActivity.this, DrawableActivity.class));
+    }
+
+    @OnClick(R.id.button_drawableview1)
+    void button_drawableview1(View view){
+        startActivity(new Intent(PhotoActivity.this, Drawable1Activity.class));
+    }
+
+    @OnClick(R.id.button_drawableview2)
+    void setButton_drawableview2(View view){
+        startActivity(new Intent(PhotoActivity.this, Drawable2Activity.class));
     }
 }
