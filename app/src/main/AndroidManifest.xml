@@ -35,7 +35,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".drawableview.test2.Drawable2Activity"></activity>
+        <activity android:name=".qmListview.QMListviewActivity"></activity>
+        <activity android:name=".drawableview.test2.Drawable2Activity" />
         <activity android:name=".drawableview.test1.Drawable1Activity" />
         <activity android:name=".drawableview.github.DrawableActivity" />
         <activity android:name=".checkphotovideo.CheckPhotoVideoActivity" />

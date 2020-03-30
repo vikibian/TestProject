@@ -21,9 +21,24 @@
 
             <Button
                 android:text="已整改"
-                android:textColor="@color/black"
+                android:textColor="@color/button_selecor_color"
                 android:id="@+id/button_answerlist_left"
-                android:background="@drawable/logincode_left"
+                android:background="@drawable/logincode_left_selector"
+                android:layout_alignParentRight="true"
+                android:layout_width="100dp"
+                android:layout_height="50dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_weight="0.5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <Button
+                android:text="已整改"
+                android:textColor="@color/button_selecor_color"
+                android:id="@+id/button_answerlist_middle"
+                android:background="@drawable/logincode_middle_selector"
                 android:layout_alignParentRight="true"
                 android:layout_width="100dp"
                 android:layout_height="50dp" />
@@ -38,9 +53,9 @@
 
             <Button
                 android:text="未整改"
-                android:textColor="@color/black"
+                android:textColor="@color/button_selecor_color"
                 android:id="@+id/button_answerlist_right"
-                android:background="@drawable/logincode_right"
+                android:background="@drawable/logincode_right_selector"
                 android:layout_width="100dp"
                 android:layout_height="50dp" />
 

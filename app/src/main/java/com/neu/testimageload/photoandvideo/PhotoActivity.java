@@ -43,6 +43,7 @@ import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
 import com.neu.testimageload.pdfprint.PrintPdfActivity;
+import com.neu.testimageload.qmListview.QMListviewActivity;
 import com.neu.testimageload.recheck.ReCheckActivity;
 import com.neu.testimageload.rectifyresult.RectifyResultActivity;
 import com.neu.testimageload.sms.SmsActivity;
@@ -99,6 +100,8 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     Button button_drawableview1;
     @BindView(R.id.button_drawableview2)
     Button button_drawableview2;
+    @BindView(R.id.button_QMUICommonListItemView)
+    Button button_QMListview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -447,5 +450,10 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     @OnClick(R.id.button_drawableview2)
     void setButton_drawableview2(View view){
         startActivity(new Intent(PhotoActivity.this, Drawable2Activity.class));
+    }
+
+    @OnClick(R.id.button_QMUICommonListItemView)
+    void setButton_QMListview(View view){
+        startActivity(new Intent(PhotoActivity.this, QMListviewActivity.class));
     }
 }
