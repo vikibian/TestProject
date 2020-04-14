@@ -21,8 +21,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bm.library.PhotoView;
 import com.neu.testimageload.BuildConfig;
 import com.neu.testimageload.CheckList.CheckListActivity;
+import com.neu.testimageload.ExpandableTextView.ExpandableTextViewActivity;
 import com.neu.testimageload.ImageloaderListviewActivity;
 import com.neu.testimageload.R;
 import com.neu.testimageload.SearchView.SearchViewActivity;
@@ -102,6 +104,8 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     Button button_drawableview2;
     @BindView(R.id.button_QMUICommonListItemView)
     Button button_QMListview;
+    @BindView(R.id.button_ExpandableTextView)
+    Button button_expandableText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -455,5 +459,10 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     @OnClick(R.id.button_QMUICommonListItemView)
     void setButton_QMListview(View view){
         startActivity(new Intent(PhotoActivity.this, QMListviewActivity.class));
+    }
+
+    @OnClick(R.id.button_ExpandableTextView)
+    void setButton_expandableText(View view){
+        startActivity(new Intent(PhotoActivity.this, ExpandableTextViewActivity.class));
     }
 }

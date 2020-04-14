@@ -103,6 +103,11 @@ dependencies {
     implementation 'com.qmuiteam:qmui:2.0.0-alpha04'
     //手写
     implementation 'me.panavtec:drawableview:0.6.0'
+    //expandableTextView
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    //expandableTextView 延伸库
+    implementation 'com.jaydenxiao:ExpandableTextView:1.0.0'
 }
 
 repositories {

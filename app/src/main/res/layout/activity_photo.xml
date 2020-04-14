@@ -223,6 +223,13 @@
                 android:text="QMUICommonListItemView"
                 />
 
+            <Button
+                android:id="@+id/button_ExpandableTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ExpandableTextView"
+                />
+
 
         </LinearLayout>
 
