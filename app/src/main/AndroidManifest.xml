@@ -35,7 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".ExpandableTextView.ExpandableTextViewActivity"></activity>
+        <activity android:name=".MyExpandableTextView.MyExpandableTextViewActivity"></activity>
+        <activity android:name=".DragFloatActionButton.DragFloatActionButtonActivity" />
+        <activity android:name=".ExpandableTextView.ExpandableTextViewActivity" />
         <activity android:name=".qmListview.QMListviewActivity" />
         <activity android:name=".drawableview.test2.Drawable2Activity" />
         <activity android:name=".drawableview.test1.Drawable1Activity" />

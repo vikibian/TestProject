@@ -24,8 +24,10 @@ import android.widget.Toast;
 import com.bm.library.PhotoView;
 import com.neu.testimageload.BuildConfig;
 import com.neu.testimageload.CheckList.CheckListActivity;
+import com.neu.testimageload.DragFloatActionButton.DragFloatActionButtonActivity;
 import com.neu.testimageload.ExpandableTextView.ExpandableTextViewActivity;
 import com.neu.testimageload.ImageloaderListviewActivity;
+import com.neu.testimageload.MyExpandableTextView.MyExpandableTextViewActivity;
 import com.neu.testimageload.R;
 import com.neu.testimageload.SearchView.SearchViewActivity;
 import com.neu.testimageload.SmartTable.SmartTableActivity;
@@ -106,6 +108,10 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     Button button_QMListview;
     @BindView(R.id.button_ExpandableTextView)
     Button button_expandableText;
+    @BindView(R.id.button_FloatBUtton)
+    Button button_floatbutton;
+    @BindView(R.id.button_MyExpandableTextView)
+    Button button_MyExpandableTextview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -464,5 +470,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     @OnClick(R.id.button_ExpandableTextView)
     void setButton_expandableText(View view){
         startActivity(new Intent(PhotoActivity.this, ExpandableTextViewActivity.class));
+    }
+
+    @OnClick(R.id.button_FloatBUtton)
+    void setButton_floatbutton(View view){
+        startActivity(new Intent(PhotoActivity.this, DragFloatActionButtonActivity.class));
+    }
+
+    @OnClick(R.id.button_MyExpandableTextView)
+    void setButton_MyExpandableTextview(View view){
+        startActivity(new Intent(PhotoActivity.this, MyExpandableTextViewActivity.class));
     }
 }

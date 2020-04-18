@@ -230,6 +230,20 @@
                 android:text="ExpandableTextView"
                 />
 
+            <Button
+                android:id="@+id/button_FloatBUtton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FloatBUtton"
+                />
+
+            <Button
+                android:id="@+id/button_MyExpandableTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MyExpandableTextView"
+                />
+
 
         </LinearLayout>
 
