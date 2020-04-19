@@ -35,7 +35,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".MyExpandableTextView.MyExpandableTextViewActivity"></activity>
+        <activity android:name=".mimaxianshi.PasswordShowOrHideActivity"></activity>
+        <activity android:name=".zhengzebiaodashi.ZhengzebiaodashiActivity" />
+        <activity android:name=".Emailsend.EmailSendActivity" />
+        <activity android:name=".MyExpandableTextView.MyExpandableTextViewActivity" />
         <activity android:name=".DragFloatActionButton.DragFloatActionButtonActivity" />
         <activity android:name=".ExpandableTextView.ExpandableTextViewActivity" />
         <activity android:name=".qmListview.QMListviewActivity" />

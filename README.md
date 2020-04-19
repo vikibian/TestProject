@@ -67,3 +67,12 @@ Github仓库地址：[Logger](https://github.com/orhanobut/logger "Logger")
 
 ### 21.MyExpandableTextView
 实现了可以扩展的Expandableview. 也测试了两个ExpandableTextView的第三方控件。
+
+### 22.测试了正则表达式
+测试了正则表达式，按照字母和数字的格式输入。
+
+### 22.实现了密码的明隐显示效果
+实现了密码的明隐显示效果。
+
+### 23.实现了发送邮件的功能
+实现了发送邮件的功能。

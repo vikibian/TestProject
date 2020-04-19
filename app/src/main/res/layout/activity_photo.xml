@@ -245,6 +245,27 @@
                 />
 
 
+            <Button
+                android:id="@+id/button_EmailSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EmailSend"
+                />
+
+            <Button
+                android:id="@+id/button_zhengzebiaodashi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="正则表达式"
+                />
+
+            <Button
+                android:id="@+id/button_showOrHide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="密码明隐显示"
+                />
+
         </LinearLayout>
 
 

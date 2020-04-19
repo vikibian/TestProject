@@ -25,6 +25,7 @@ import com.bm.library.PhotoView;
 import com.neu.testimageload.BuildConfig;
 import com.neu.testimageload.CheckList.CheckListActivity;
 import com.neu.testimageload.DragFloatActionButton.DragFloatActionButtonActivity;
+import com.neu.testimageload.Emailsend.EmailSendActivity;
 import com.neu.testimageload.ExpandableTextView.ExpandableTextViewActivity;
 import com.neu.testimageload.ImageloaderListviewActivity;
 import com.neu.testimageload.MyExpandableTextView.MyExpandableTextViewActivity;
@@ -43,6 +44,7 @@ import com.neu.testimageload.glidenetimage.GlideNetImageActivity;
 import com.neu.testimageload.imagedialog.ImageDialogActivity;
 import com.neu.testimageload.jiaoziplayer.JiaoziPlayerActivity;
 import com.neu.testimageload.listitem.ListItemActivity;
+import com.neu.testimageload.mimaxianshi.PasswordShowOrHideActivity;
 import com.neu.testimageload.multilevelTreeList.MultilevelTreeListActivity;
 import com.neu.testimageload.nicevideo.NiceVideoActivity;
 import com.neu.testimageload.pdfView.PDFViewerActivity;
@@ -54,6 +56,7 @@ import com.neu.testimageload.sms.SmsActivity;
 import com.neu.testimageload.stamper.StamperActivity;
 import com.neu.testimageload.surfaceview.SurfaceViewActivity;
 import com.neu.testimageload.toolbar.ToolbarActivity;
+import com.neu.testimageload.zhengzebiaodashi.ZhengzebiaodashiActivity;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.Logger;
 import com.zhihu.matisse.Matisse;
@@ -112,6 +115,14 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     Button button_floatbutton;
     @BindView(R.id.button_MyExpandableTextView)
     Button button_MyExpandableTextview;
+    @BindView(R.id.button_EmailSend)
+    Button button_EmailSend;
+
+    @BindView(R.id.button_zhengzebiaodashi)
+    Button button_zhengzebiaodashi;
+
+    @BindView(R.id.button_showOrHide)
+    Button button_showOrHide;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -480,5 +491,20 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     @OnClick(R.id.button_MyExpandableTextView)
     void setButton_MyExpandableTextview(View view){
         startActivity(new Intent(PhotoActivity.this, MyExpandableTextViewActivity.class));
+    }
+
+    @OnClick(R.id.button_EmailSend)
+    void setButton_EmailSend(View view){
+        startActivity(new Intent(PhotoActivity.this, EmailSendActivity.class));
+    }
+
+    @OnClick(R.id.button_zhengzebiaodashi)
+    void setButton_zhengzebiaodashi(View view){
+        startActivity(new Intent(PhotoActivity.this, ZhengzebiaodashiActivity.class));
+    }
+
+    @OnClick(R.id.button_showOrHide)
+    void setButton_showOrHide(View view){
+        startActivity(new Intent(PhotoActivity.this, PasswordShowOrHideActivity.class));
     }
 }
