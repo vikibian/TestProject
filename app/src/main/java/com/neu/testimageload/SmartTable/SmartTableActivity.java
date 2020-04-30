@@ -52,7 +52,7 @@ public class SmartTableActivity extends AppCompatActivity {
     Column<String> tasktype;
     Column<String> danwei;
 
-//    SmartTable smartTable;
+    SmartTable smartTable;
 
     private SmartTable<User> table;
     Column<String> name;
@@ -67,7 +67,8 @@ public class SmartTableActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smart_table);
 
-        getSearchedData();
+//        getSearchedData();
+        init();
 
 //        smartTable = findViewById(R.id.table);
 //
@@ -97,7 +98,7 @@ public class SmartTableActivity extends AppCompatActivity {
 
 
 
-
+//
 //        table = (SmartTable<User>)findViewById(R.id.table);
 //        List<User> codeList = new ArrayList<User>();
 //        codeList.add(new User("user_01",20,false));
@@ -174,8 +175,8 @@ public class SmartTableActivity extends AppCompatActivity {
 //                table.invalidate();
 //            }
 //        });
-//
-//        final TableData<Task> tableData = new TableData<Task>("测试标题",tasks,checkdate,
+
+//        final TableData<User> tableData = new TableData<User>("测试标题",codeList,name,
 //        deadline,devclass, devid, latitude, place,result, taskID, tasktype, danwei);
 //        taskSmartTable.getConfig().setShowTableTitle(false);
 //
@@ -274,6 +275,21 @@ public class SmartTableActivity extends AppCompatActivity {
 
     private void init() {
         taskSmartTable = findViewById(R.id.table);
+        tasks = new ArrayList<Task>();
+        Task task = new Task();
+        task.setCHECKDATE("1");
+        task.setDEADLINE("2");
+        task.setDEVCLASS("3");
+        task.setDEVID("4");
+        task.setLATITUDE("5");
+        task.setPLACE("6");
+        task.setRESULT("7");
+        task.setTASKTYPE("8");
+        task.setUSEUNITNAME("9");
+        for (int i=0;i<30;i++){
+            tasks.add(task);
+        }
+
         checkdate = new Column<String>("检查日期","CHECKDATE");
         checkdate.setOnColumnItemClickListener(new OnColumnItemClickListener<String>() {
             @Override
@@ -281,6 +297,7 @@ public class SmartTableActivity extends AppCompatActivity {
                 Toast.makeText(SmartTableActivity.this,"点击了"+value+" "+position,Toast.LENGTH_SHORT).show();
             }
         });
+        checkdate.setFixed(true);
 
         deadline = new Column<String>("截止日期","DEADLINE");
         deadline.setOnColumnItemClickListener(new OnColumnItemClickListener<String>() {
@@ -355,9 +372,15 @@ public class SmartTableActivity extends AppCompatActivity {
 
         final TableData<Task> tableData = new TableData<Task>("测试标题",tasks,checkdate,
                 deadline,devclass, devid, latitude, place,result, taskID, tasktype, danwei);
-        taskSmartTable.getConfig().setShowTableTitle(false);
+        taskSmartTable.getConfig().setShowTableTitle(false);//设置标题
+//        FontStyle fontStyle = new FontStyle();
+//        fontStyle.setTextSize(30);
+//        fontStyle.setAlign(Paint.Align.CENTER);
+//        taskSmartTable.getConfig().setTableTitleStyle(fontStyle);
+//        taskSmartTable.getTableTitle().setSize(20);
         taskSmartTable.getConfig().setShowXSequence(false);
         taskSmartTable.setTableData(tableData);
+
 
 //        table.getConfig().setContentStyle(new FontStyle(50, Color.BLUE));
         taskSmartTable.getConfig().setMinTableWidth(1024);       //设置表格最小宽度

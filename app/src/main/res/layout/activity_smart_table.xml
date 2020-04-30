@@ -4,7 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".SmartTable.SmartTableActivity">
+
+    <TextView
+        android:gravity="center"
+        android:text="123"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <com.bin.david.form.core.SmartTable
         android:id="@+id/table"
