@@ -6,11 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".photoandvideo.SecondActivity">
 
-    <Button
-        android:id="@+id/button_viewpager"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ViewPager"
-        />
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewPager"
+            />
+
+
+    </ScrollView>
+
+
 
 </LinearLayout>
