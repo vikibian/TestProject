@@ -76,3 +76,5 @@ Github仓库地址：[Logger](https://github.com/orhanobut/logger "Logger")
 
 ### 23.实现了发送邮件的功能
 实现了发送邮件的功能。
+
+### 24.添加了QUMITabSegment

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="ListView效果"
+        android:id="@+id/list_view">
+        <menu>
+            <item android:id="@+id/list_view_vertical_standrad"
+                android:title="垂直标准">
+            </item>
+            <item android:id="@+id/list_view_vertical_reverse"
+                android:title="垂直反向">
+            </item>
+            <item android:id="@+id/list_view_horizontal_standrad"
+                android:title="水平标准">
+            </item>
+            <item android:id="@+id/list_view_horizontal_reverse"
+                android:title="水平反向">
+            </item>
+        </menu>
+
+    </item>
+    <item android:title="GridView效果"
+        android:id="@+id/grid_view">
+
+    </item>
+
+    <item android:title="瀑布流效果"
+        android:id="@+id/stagger_view">
+
+    </item>
+
+    <item android:title="跳转"
+        android:id="@+id/mutil_type">
+
+    </item>
+
+</menu>

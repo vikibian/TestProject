@@ -29,6 +29,7 @@ import com.neu.testimageload.Emailsend.EmailSendActivity;
 import com.neu.testimageload.ExpandableTextView.ExpandableTextViewActivity;
 import com.neu.testimageload.ImageloaderListviewActivity;
 import com.neu.testimageload.MyExpandableTextView.MyExpandableTextViewActivity;
+import com.neu.testimageload.QMUITAB.QMUITABActivity;
 import com.neu.testimageload.R;
 import com.neu.testimageload.SearchView.SearchViewActivity;
 import com.neu.testimageload.SmartTable.SmartTableActivity;
@@ -123,6 +124,12 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
 
     @BindView(R.id.button_showOrHide)
     Button button_showOrHide;
+
+    @BindView(R.id.button_QMUITab)
+    Button button_QMUITAB;
+
+    @BindView(R.id.button_secondactivity)
+    Button button_secondactivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -506,5 +513,15 @@ public class PhotoActivity extends AppCompatActivity implements View.OnClickList
     @OnClick(R.id.button_showOrHide)
     void setButton_showOrHide(View view){
         startActivity(new Intent(PhotoActivity.this, PasswordShowOrHideActivity.class));
+    }
+
+    @OnClick(R.id.button_QMUITab)
+    void setButton_QMUITAB(View view){
+        startActivity(new Intent(PhotoActivity.this, QMUITABActivity.class));
+    }
+
+    @OnClick(R.id.button_secondactivity)
+    void setButton_secondactivity(View view){
+        startActivity(new Intent(PhotoActivity.this,SecondActivity.class));
     }
 }

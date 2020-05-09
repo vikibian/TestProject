@@ -35,7 +35,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".mimaxianshi.PasswordShowOrHideActivity"></activity>
+        <activity android:name=".QMUITAB.ViewPagerActivity"></activity>
+        <activity android:name=".photoandvideo.SecondActivity" />
+        <activity android:name=".QMUITAB.QMUITABActivity" />
+        <activity android:name=".trillgates.MenuTestActivity" />
+        <activity android:name=".mimaxianshi.PasswordShowOrHideActivity" />
         <activity android:name=".zhengzebiaodashi.ZhengzebiaodashiActivity" />
         <activity android:name=".Emailsend.EmailSendActivity" />
         <activity android:name=".MyExpandableTextView.MyExpandableTextViewActivity" />

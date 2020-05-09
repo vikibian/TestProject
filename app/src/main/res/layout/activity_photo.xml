@@ -266,6 +266,20 @@
                 android:text="密码明隐显示"
                 />
 
+            <Button
+                android:id="@+id/button_QMUITab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="QMUITab"
+                />
+
+            <Button
+                android:id="@+id/button_secondactivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="第二个页面"
+                />
+
         </LinearLayout>
 
 
