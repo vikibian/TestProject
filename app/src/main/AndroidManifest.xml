@@ -35,7 +35,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
-        <activity android:name=".QMUITAB.ViewPagerActivity"></activity>
+
+        <activity android:name=".databasedemo.DatabaseActivity"></activity>
+        <activity android:name=".QMUITAB.ViewPagerActivity" />
         <activity android:name=".photoandvideo.SecondActivity" />
         <activity android:name=".QMUITAB.QMUITABActivity" />
         <activity android:name=".trillgates.MenuTestActivity" />
